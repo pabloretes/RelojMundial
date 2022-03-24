@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../img/rm-header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.navbar-brand {
+  font-size: 4rem;
+  color: #ffc800 !important;
+  font-family: "Kaushan Script", cursive;
+}
+
+.nav-link {
+  font-family: 'Montserrat', sans-serif !important;
+  color: white !important;
+  letter-spacing: 0.1em !important;
+}
+
+.container-relojes {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 0px;
+    justify-content: center;
+}
+
+.container-secundario {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  padding: 5% 0 0 0;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card {
+    width: 400px; 
+    margin: 10px
+}
+
+.container-anclas {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5%;
+  text-align: center;
+}
+
+.ancla {
+  padding: 0 0 5% 0;
+}
+
+/*-------------------------------------------------------*/
+
+.wrap {
+  width: 50%;
+  max-width: 1000%;
+}
+
+.widget {
+  width: 45%;
+  margin: 50px;
+  margin-left: 400px;
+}
+.widget p {
+  display: inline-block;
+  line-height: 1em;
+}
+.fecha {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0.3125rem;
+  background: rgba(211, 211, 210, 0.794);
+  padding: 20px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.reloj {
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  padding: 20px;
+  font-size: 4em;
+  text-align: center;
+  background: rgba(211, 211, 210, 0.794);
+  border-radius: 4px;
+}
+
+.reloj .caja-segundos {
+  display: inline-block;
+}
+
+.reloj .segundos,
+.reloj .ampm {
+  font-size: 2rem;
+  display: block;
+}
+.botones {
+  margin-left: 385px;
+}
+.boton {
+  width: 5%;
+  margin-left: 30px;
+  height: 25px;
+  color: rgb(255, 255, 255);
+  background: rgba(49, 45, 45, 0.822);
+  border-radius: 5px;
+  border-color: rgba(202, 202, 202, 0.863);
+}

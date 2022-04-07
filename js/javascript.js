@@ -1,22 +1,42 @@
+alert("Bienvenido a Reloj Mundial. A continuación elije tu ciudad");
 let textoEntrada = prompt(
-  "Elige tu ciudad: 1 Buenos Aires; 2 Tel Aviv; 3 Bogotá"
+  "Elige tu ciudad: 1 Buenos Aires | 2 Tel Aviv | 3 Bogotá | 4 Lima"
 );
 
+// Aquí utilizo arrays para la entrega del 07/04
+const miArrayCiudades = [{ idCiudad: 1, ciudad: "Buenos Aires" },
+                  { idCiudad: 2,  ciudad: "Tel Aviv" },
+                  { idCiudad: 3,  ciudad: "Bogotá" },
+                  { idCiudad: 4,  ciudad: "Lima" }];
+
+function devuelveCiudad (idCiudad){
+  
+  for (let laCiudad of miArrayCiudades){
+    if (idCiudad == laCiudad.idCiudad) {
+      return ("Tu ciudad es " + laCiudad.ciudad);
+    }
+  }
+}
+
+id_textoCantidadRelojes.textContent = "Reloj Mundial posee " + miArrayCiudades.length + " Relojes";
 while (textoEntrada != "ESC") {
   switch (textoEntrada) {
     case "1":
-      id_tuCiudad.textContent = "Tu ciudad es Buenos Aires - Argentina";
+      id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
       textoEntrada = "ESC";
       break;
     case "2":
-      id_tuCiudad.textContent = "Tu ciudad es Tel Aviv - Israel";
+      id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
       textoEntrada = "ESC";
       break;
     case "3":
-      id_tuCiudad.textContent = "Tu ciudad es Bogotá - Colombia";
+      id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
       textoEntrada = "ESC";
       break;
-
+    case "4":
+        id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
+        textoEntrada = "ESC";
+        break;
     default:
       alert("Error");
       textoEntrada = "ESC";
@@ -34,7 +54,8 @@ const options = {
 
 
 const difBog = -2;
-const difTel = 5;
+const difLim = -2;
+const difTel = 6;
 
 let date = new Date();
 
@@ -46,6 +67,10 @@ id_fecha_bue.textContent = date.toLocaleDateString("es-AR", options);
 date.setHours(date.getHours() + difBog);
 id_hora_bog.textContent = date.toLocaleTimeString();
 id_fecha_bog.textContent = date.toLocaleDateString("es-AR", options);
+
+/* Perú -2 horas de diferencia   */
+id_hora_lim.textContent = date.toLocaleTimeString();
+id_fecha_lim.textContent = date.toLocaleDateString("es-AR", options);
 
 /* Tel Aviv 5 horas de diferencia    */
 date.setHours(date.getHours() + (-difBog + difTel));

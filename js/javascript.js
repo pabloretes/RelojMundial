@@ -1,78 +1,99 @@
+const difBog = -2;
+const difLim = -2;
+const difTel = 6;
+const difVig = 5;
+
+
+
+// Objeto ciudades
+const miArrayCiudades = [
+  { idCiudad: 1, ciudad: "Tel Aviv", pais: "israel" },
+  { idCiudad: 2, ciudad: "Buenos Aires", pais: "Argentina"},
+  { idCiudad: 3, ciudad: "Bogotá", pais: "Colombia" },
+  { idCiudad: 4, ciudad: "Lima", pais: "Peru" },
+  { idCiudad: 5, ciudad: "Vigo", pais: "España" }
+];
+let date = new Date();
+
+// Tuve que poner este objeto para poder formatear la fecha
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+
 alert("Bienvenido a Reloj Mundial. A continuación elije tu ciudad");
 let textoEntrada = prompt(
-  "Elige tu ciudad: 1 Buenos Aires | 2 Tel Aviv | 3 Bogotá | 4 Lima"
+  "Elige tu ciudad: 1 Tel Aviv | 2 Buenos Aires | 3 Bogotá | 4 Lima | 5 Vigo"
 );
 
-// Aquí utilizo arrays para la entrega del 07/04
-const miArrayCiudades = [{ idCiudad: 1, ciudad: "Buenos Aires" },
-                  { idCiudad: 2,  ciudad: "Tel Aviv" },
-                  { idCiudad: 3,  ciudad: "Bogotá" },
-                  { idCiudad: 4,  ciudad: "Lima" }];
+if (textoEntrada <=  miArrayCiudades.length) {
+  id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
+  textoEntrada = "ESC";
+} else {
+  alert("Error");
+  textoEntrada = "ESC";
+}
 
-function devuelveCiudad (idCiudad){
-  
-  for (let laCiudad of miArrayCiudades){
+// Busqueda de la ciudad 
+function devuelveCiudad(idCiudad) {
+
+  for (let laCiudad of miArrayCiudades) {
     if (idCiudad == laCiudad.idCiudad) {
-      return ("Tu ciudad es " + laCiudad.ciudad);
+      return "Tu ciudad es " + laCiudad.ciudad + " - " + laCiudad.pais;
     }
   }
 }
 
 id_textoCantidadRelojes.textContent = "Reloj Mundial posee " + miArrayCiudades.length + " Relojes";
-while (textoEntrada != "ESC") {
-  switch (textoEntrada) {
-    case "1":
-      id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
-      textoEntrada = "ESC";
-      break;
-    case "2":
-      id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
-      textoEntrada = "ESC";
-      break;
-    case "3":
-      id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
-      textoEntrada = "ESC";
-      break;
-    case "4":
-        id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
-        textoEntrada = "ESC";
-        break;
-    default:
-      alert("Error");
-      textoEntrada = "ESC";
-      break;
-  }
-}
-
-// Tuve que poner esta lista delimitada por comas para poder formatear la fecha
-const options = {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric"
-};
 
 
-const difBog = -2;
-const difLim = -2;
-const difTel = 6;
+/* Tel Aviv 6 horas de diferencia    */
+date = new Date();
+date.setHours(date.getHours() + difTel);
 
-let date = new Date();
+let hora1 = document.getElementById("id_hora1");
+hora1.innerText = date.toLocaleTimeString();
+
+let fecha1 = document.getElementById("id_fecha1");
+fecha1.innerText = date.toLocaleDateString("es-AR", options);
 
 /* Buenos Aires */
-id_hora_bue.textContent = date.toLocaleTimeString();
-id_fecha_bue.textContent = date.toLocaleDateString("es-AR", options);
+date = new Date();
+let hora2 = document.getElementById("id_hora2");
+hora2.innerText = date.toLocaleTimeString();
+
+let fecha2 = document.getElementById("id_fecha2");
+fecha2.innerText = date.toLocaleDateString("es-AR", options);
 
 /* Colombia -2 horas de diferencia   */
+date = new Date();
 date.setHours(date.getHours() + difBog);
-id_hora_bog.textContent = date.toLocaleTimeString();
-id_fecha_bog.textContent = date.toLocaleDateString("es-AR", options);
+
+let hora3 = document.getElementById("id_hora3");
+hora3.innerText = date.toLocaleTimeString();
+
+let fecha3 = document.getElementById("id_fecha3");
+fecha3.innerText = date.toLocaleDateString("es-AR", options);
 
 /* Perú -2 horas de diferencia   */
-id_hora_lim.textContent = date.toLocaleTimeString();
-id_fecha_lim.textContent = date.toLocaleDateString("es-AR", options);
+date = new Date();
+date.setHours(date.getHours() + difLim);
 
-/* Tel Aviv 5 horas de diferencia    */
-date.setHours(date.getHours() + (-difBog + difTel));
-id_hora_tel.textContent = date.toLocaleTimeString();
-id_fecha_tel.textContent = date.toLocaleDateString("es-AR", options);
+let hora4 = document.getElementById("id_hora4");
+hora4.innerText = date.toLocaleTimeString();
+
+let fecha4 = document.getElementById("id_fecha4");
+fecha4.innerText = date.toLocaleDateString("es-AR", options);
+
+/* Vigo 5 horas de diferencia    */
+date = new Date();
+date.setHours(date.getHours() + difVig);
+
+let hora5 = document.getElementById("id_hora5");
+hora5.innerText = date.toLocaleTimeString();
+
+let fecha5 = document.getElementById("id_fecha5");
+fecha5.innerText = date.toLocaleDateString("es-AR", options);

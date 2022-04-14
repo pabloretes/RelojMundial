@@ -7,7 +7,7 @@ const difVig = 5;
 
 // Objeto ciudades
 const miArrayCiudades = [
-  { idCiudad: 1, ciudad: "Tel Aviv", pais: "israel" },
+  { idCiudad: 1, ciudad: "Tel Aviv", pais: "Israel" },
   { idCiudad: 2, ciudad: "Buenos Aires", pais: "Argentina"},
   { idCiudad: 3, ciudad: "Bogotá", pais: "Colombia" },
   { idCiudad: 4, ciudad: "Lima", pais: "Peru" },
@@ -30,7 +30,8 @@ let textoEntrada = prompt(
 );
 
 if (textoEntrada <=  miArrayCiudades.length) {
-  id_tuCiudad.textContent = devuelveCiudad(textoEntrada);
+  let tuCiudad = document.getElementById("id_tuCiudad");
+  tuCiudad.innerText = devuelveCiudad(textoEntrada);
   textoEntrada = "ESC";
 } else {
   alert("Error");

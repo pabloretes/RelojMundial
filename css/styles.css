@@ -34,24 +34,27 @@ h3 {
 
 .container-relojes {
     display: flex;
-    width: 100%;
+    width: 90%;
     flex-direction: row;
     padding: 0px;
     justify-content: center;
+    margin: 0 auto;
+    border: 2px solid fuchsia;
 }
 
 .container-secundario {
   display: flex;
   width: 90%;
   flex-direction: row;
-  padding: 5% 0 0 0;
+  padding: 5px 0;
   justify-content: center;
   margin: 0 auto;
 }
 
 .card {
-    width: 400px; 
-    margin: 10px
+    width: 200px; 
+    margin: 16px;
+    
 }
 
 .container-anclas {
@@ -68,61 +71,12 @@ h3 {
   padding: 0 0 5% 0;
 }
 
-/*-------------------------------------------------------*/
-
-.wrap {
-  width: 50%;
-  max-width: 1000%;
-}
-
-.widget {
-  width: 45%;
-  margin: 50px;
-  margin-left: 400px;
-}
-.widget p {
-  display: inline-block;
-  line-height: 1em;
-}
-.fecha {
-  font-family: "Oswald", sans-serif;
-  text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 0.3125rem;
-  background: rgba(211, 211, 210, 0.794);
-  padding: 20px;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.reloj {
-  font-family: "Oswald", sans-serif;
-  width: 100%;
-  padding: 20px;
-  font-size: 4em;
-  text-align: center;
-  background: rgba(211, 211, 210, 0.794);
-  border-radius: 4px;
-}
-
-.reloj .caja-segundos {
-  display: inline-block;
-}
-
-.reloj .segundos,
-.reloj .ampm {
-  font-size: 2rem;
-  display: block;
-}
-.botones {
-  margin-left: 385px;
-}
 .boton {
-  width: 5%;
-  margin-left: 30px;
-  height: 25px;
-  color: rgb(255, 255, 255);
-  background: rgba(49, 45, 45, 0.822);
-  border-radius: 5px;
-  border-color: rgba(202, 202, 202, 0.863);
+    padding: 15px 30px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: black;
+    border-radius: 6px;
+    border: 2px solid fuchsia;
 }

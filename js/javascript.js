@@ -21,10 +21,6 @@ const options = {
   day: "numeric",
 };
 
-// Evento Onclick para la entrega del 19/04
-let boton = document.querySelector("#btnRelojes");
-boton.onclick = fn_actualizarHora();
-
 alert("Bienvenido a Reloj Mundial. A continuación elije tu ciudad");
 let textoEntrada = prompt(
   "Elige tu ciudad --> | 1 Tel Aviv | 2 Buenos Aires | 3 Bogotá | 4 Lima | 5 Vigo |"
@@ -35,7 +31,8 @@ if (textoEntrada <= miArrayCiudades.length) {
   tuCiudad.innerText = devuelveCiudad(textoEntrada);
   fn_actualizarHora();
   textoEntrada = "ESC";
-} else {
+} 
+else {
   alert("Error");
   textoEntrada = "ESC";
 }
@@ -53,6 +50,8 @@ id_textoCantidadRelojes.textContent =
   "Reloj Mundial posee " + miArrayCiudades.length + " Relojes";
 
 
+
+
 function fn_actualizarHora() {
   /* Tel Aviv 6 horas de diferencia    */
   date = new Date();
@@ -60,7 +59,6 @@ function fn_actualizarHora() {
 
   let hora1 = document.getElementById("id_hora1");
   hora1.innerText = date.toLocaleTimeString();
-
 
   let fecha1 = document.getElementById("id_fecha1");
   fecha1.innerText = date.toLocaleDateString("es-AR", options);
@@ -103,3 +101,15 @@ function fn_actualizarHora() {
   let fecha5 = document.getElementById("id_fecha5");
   fecha5.innerText = date.toLocaleDateString("es-AR", options);
 }
+
+// Evento Onclick 
+document.getElementById("btnUpdate").addEventListener("click", fn_clickActualizar);
+
+function fn_clickActualizar() {
+    document.getElementById("btnUpdate").innerHTML = "Todo Actualizado";
+    fn_actualizarHora();
+}
+
+
+//let boton = document.getElementById("btnRelojes");
+//boton.onclick = console.log("vamos"); //fn_actualizarHora();

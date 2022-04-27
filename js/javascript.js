@@ -1,8 +1,10 @@
-const difBog = -2;
-const difLim = -2;
-const difTel = 6;
-const difVig = 5;
-
+// DESESTRUCTURACION. (Ver function fn_actualizarHora) Entrega del 28/04
+const difHoraria = {
+  difBog : -2,
+  difLim : -2,
+  difTel : 6,
+  difVig : 5
+}
 // Objeto ciudades
 const miArrayCiudades = [
   { idCiudad: 1, ciudad: "Tel Aviv", pais: "Israel" },
@@ -12,9 +14,17 @@ const miArrayCiudades = [
   { idCiudad: 5, ciudad: "Vigo", pais: "España" },
 ];
 
+
+
+
 //Uso de JSON y Storage (me servía Session Storage)
 const jsonCiudades = JSON.stringify(miArrayCiudades);
 sessionStorage.setItem("Ciudades", jsonCiudades);
+
+function fn_cuentaRelojes() {
+  let lasCiudades = JSON.parse(sessionStorage.getItem("Ciudades"));
+  return lasCiudades.length;
+}
 
 let date = new Date();
 
@@ -26,10 +36,7 @@ const options = {
   day: "numeric",
 };
 
-function fn_cuentaRelojes() {
-  let lasCiudades = JSON.parse(sessionStorage.getItem("Ciudades"));
-  return lasCiudades.length;
-}
+
 
 function reseteaColores() {
   document.getElementById("id_hora1").style.color = "black";
@@ -39,13 +46,16 @@ function reseteaColores() {
   document.getElementById("id_hora5").style.color = "black";
 }
 
-function fn_actualizarHora(ciudadSeleccion) {
+function fn_actualizarHora() {
   // Cantidad de relojes
   let cantidadRelojes = document.getElementById("id_textoCantidadRelojes");
   cantidadRelojes.innerText =
     "Reloj Mundial posee " + fn_cuentaRelojes() + " Relojes";
+  
+    // DESESTRUCTURACION. Entrega del 28/04
+  let {difTel,difBog, difLim, difVig} = difHoraria
 
-  /* Tel Aviv 6 horas de diferencia    */
+    /* Tel Aviv 6 horas de diferencia    */
   date = new Date();
   date.setHours(date.getHours() + difTel);
 
@@ -102,7 +112,6 @@ document
 function fn_clickActualizar() {
   document.getElementById("btnUpdate").innerHTML = "Todo Actualizado";
   fn_actualizarHora();
-  fn_pintaCiudad(textoCiudad);
 }
 
 // Evento click <Seleccionar>
@@ -119,28 +128,15 @@ function fn_clickSeleccionar() {
   fn_pintaCiudad(textoCiudad);
 }
 
+// USO OPERADOR TERNARIO, entrega del 28/04
 function fn_pintaCiudad(textoCiudad) {
   reseteaColores();
-  console.log(textoCiudad);
-  if (textoCiudad == "Tel Aviv") {
-    document.getElementById("id_hora1").style.color = "fuchsia";
-  } else {
-    if (textoCiudad == "Buenos Aires") {
-      document.getElementById("id_hora2").style.color = "fuchsia";
-    } else {
-      if (textoCiudad == "Bogotá") {
-        document.getElementById("id_hora3").style.color = "fuchsia";
-      } else {
-        if (textoCiudad == "Lima") {
-          document.getElementById("id_hora4").style.color = "fuchsia";
-        }  else {
-          if (textoCiudad == "Vigo") {
-            document.getElementById("id_hora5").style.color = "fuchsia";
-          } else {
-            reseteaColores();
-          }
-        }
-      }
-    }
-  }
+  
+  textoCiudad == "Tel Aviv" ? document.getElementById("id_hora1").style.color = "fuchsia" : document.getElementById("id_hora1").style.color = "black"
+  textoCiudad == "Buenos Aires" ? document.getElementById("id_hora2").style.color = "fuchsia" : document.getElementById("id_hora2").style.color = "black"
+  textoCiudad == "Bogotá" ? document.getElementById("id_hora3").style.color = "fuchsia" : document.getElementById("id_hora3").style.color = "black"
+  textoCiudad == "Lima" ? document.getElementById("id_hora4").style.color = "fuchsia" : document.getElementById("id_hora4").style.color = "black"
+  textoCiudad == "Vigo" ? document.getElementById("id_hora5").style.color = "fuchsia" : document.getElementById("id_hora5").style.color = "black"
 }
+
+

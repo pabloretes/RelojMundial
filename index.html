@@ -38,16 +38,22 @@
     <header>
 
       <div class="container-secundario">
-        <div></div><h2>Selecciona tu ciudad</h2></div>
-        <div><select name="select">
+        <span><h2>Selecciona tu ciudad</h2></span>
+        
+        <div class="selectValor"><select id="selectCiudades" name="select">
           <option value="value0" selected></option>
-          <option value="value1">ciudad: "Tel Aviv", pais: "Israel"</option>
-          <option value="value2" >ciudad: "Buenos Aires", pais: "Argentina" </option>
-          <option value="value3">ciudad: "Bogotá", pais: "Colombia"</option>
-          <option value="value4">ciudad: "Lima", pais: "Peru"</option>
-          <option value="value3">ciudad: "Vigo", pais: "España"</option>
+          <option value="value1">Tel Aviv</option>
+          <option value="value2" >Buenos Aires</option>
+          <option value="value3">Bogotá</option>
+          <option value="value4">Lima</option>
+          <option value="value5">Vigo</option>
         </select>
-        </div>        
+        </div>     
+        
+          <p>
+              <button type="button" id="btnSelect" class="boton__select">Seleccionar</button>
+          </p>
+        
 
       </div>
        

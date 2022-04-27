@@ -27,34 +27,33 @@ const options = {
   day: "numeric",
 };
 
-alert("Bienvenido a Reloj Mundial. A continuación elije tu ciudad");
-let textoEntrada = prompt(
-  "Elige tu ciudad --> | 1 Tel Aviv | 2 Buenos Aires | 3 Bogotá | 4 Lima | 5 Vigo |"
-);
+//let textoEntrada = prompt(
+//  "Elige tu ciudad --> | 1 Tel Aviv | 2 Buenos Aires | 3 Bogotá | 4 Lima | 5 Vigo |"
+//);
 
-if (textoEntrada <= miArrayCiudades.length) {
-  let tuCiudad = document.getElementById("id_tuCiudad");
-  tuCiudad.innerText = devuelveCiudad(textoEntrada);
-  fn_actualizarHora();
-  textoEntrada = "ESC";
-} 
-else {
-  alert("Error");
-  textoEntrada = "ESC";
-}
+//if (textoEntrada <= miArrayCiudades.length) {
+//  let tuCiudad = document.getElementById("id_tuCiudad");
+//  tuCiudad.innerText = devuelveCiudad(textoEntrada);
+//  fn_actualizarHora();
+//  textoEntrada = "ESC";
+//} 
+//else {
+//  alert("Error");
+//  textoEntrada = "ESC";
+//}
 
 // Busqueda de la ciudad
-function devuelveCiudad(idCiudad) {
-  for (let laCiudad of miArrayCiudades) {
-    if (idCiudad == laCiudad.idCiudad) {
+//function devuelveCiudad(idCiudad) {
+//  for (let laCiudad of miArrayCiudades) {
+//    if (idCiudad == laCiudad.idCiudad) {
 
       //Uso de JSON y Storage (Session Storage)
-      const jsonLaCiudad = JSON.stringify(laCiudad);
-      sessionStorage.setItem("laCiudad", jsonLaCiudad);
-      return "Tu ciudad es " + laCiudad.ciudad + " - " + laCiudad.pais;
-    }
- }
-}
+//      const jsonLaCiudad = JSON.stringify(laCiudad);
+//      sessionStorage.setItem("laCiudad", jsonLaCiudad);
+//      return "Tu ciudad es " + laCiudad.ciudad + " - " + laCiudad.pais;
+//    }
+// }
+//}
 
 
 
@@ -116,7 +115,7 @@ function fn_actualizarHora() {
   fecha5.innerText = date.toLocaleDateString("es-AR", options);
 }
 
-// Evento click 
+// Evento click <Actualizar Relojes>
 document.getElementById("btnUpdate").addEventListener("click", fn_clickActualizar);
 
 function fn_clickActualizar() {
@@ -124,4 +123,12 @@ function fn_clickActualizar() {
     fn_actualizarHora();
 }
 
+// Evento click <Seleccionar>
+document.getElementById("btnSelect").addEventListener("click", fn_clickSeleccionar);
 
+function fn_clickSeleccionar() {
+  var seleccion = document.getElementById("selectCiudades");
+  let tuCiudad = document.getElementById("id_tuCiudad");
+  tuCiudad.innerText =  "Tu ciudad es " + seleccion.options[seleccion.selectedIndex].text;
+  fn_actualizarHora();
+}

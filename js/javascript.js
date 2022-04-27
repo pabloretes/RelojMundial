@@ -40,7 +40,6 @@ function reseteaColores() {
 }
 
 function fn_actualizarHora(ciudadSeleccion) {
-  reseteaColores();
   // Cantidad de relojes
   let cantidadRelojes = document.getElementById("id_textoCantidadRelojes");
   cantidadRelojes.innerText =
@@ -103,6 +102,7 @@ document
 function fn_clickActualizar() {
   document.getElementById("btnUpdate").innerHTML = "Todo Actualizado";
   fn_actualizarHora();
+  fn_pintaCiudad(textoCiudad);
 }
 
 // Evento click <Seleccionar>
@@ -120,6 +120,7 @@ function fn_clickSeleccionar() {
 }
 
 function fn_pintaCiudad(textoCiudad) {
+  reseteaColores();
   console.log(textoCiudad);
   if (textoCiudad == "Tel Aviv") {
     document.getElementById("id_hora1").style.color = "fuchsia";
@@ -135,6 +136,8 @@ function fn_pintaCiudad(textoCiudad) {
         }  else {
           if (textoCiudad == "Vigo") {
             document.getElementById("id_hora5").style.color = "fuchsia";
+          } else {
+            reseteaColores();
           }
         }
       }

@@ -11,6 +11,12 @@ const miArrayCiudades = [
   { idCiudad: 4, ciudad: "Lima", pais: "Peru" },
   { idCiudad: 5, ciudad: "Vigo", pais: "España" },
 ];
+
+//Uso de JSON y Storage (me servía Session Storage)
+const jsonCiudades = JSON.stringify(miArrayCiudades);
+sessionStorage.setItem("Ciudades", jsonCiudades);
+
+
 let date = new Date();
 
 // Tuve que poner este objeto para poder formatear la fecha
@@ -41,10 +47,18 @@ else {
 function devuelveCiudad(idCiudad) {
   for (let laCiudad of miArrayCiudades) {
     if (idCiudad == laCiudad.idCiudad) {
+
+      //Uso de JSON y Storage (Session Storage)
+      const jsonLaCiudad = JSON.stringify(laCiudad);
+      sessionStorage.setItem("laCiudad", jsonLaCiudad);
       return "Tu ciudad es " + laCiudad.ciudad + " - " + laCiudad.pais;
     }
-  }
+ }
 }
+
+
+
+
 
 id_textoCantidadRelojes.textContent =
   "Reloj Mundial posee " + miArrayCiudades.length + " Relojes";
@@ -102,7 +116,7 @@ function fn_actualizarHora() {
   fecha5.innerText = date.toLocaleDateString("es-AR", options);
 }
 
-// Evento Onclick 
+// Evento click 
 document.getElementById("btnUpdate").addEventListener("click", fn_clickActualizar);
 
 function fn_clickActualizar() {
@@ -111,5 +125,3 @@ function fn_clickActualizar() {
 }
 
 
-//let boton = document.getElementById("btnRelojes");
-//boton.onclick = console.log("vamos"); //fn_actualizarHora();

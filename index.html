@@ -12,8 +12,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="icon" href="img/reloj-icono.png" />
   </head>
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <span class="navbar-brand mb-0">Reloj Mundial</span>
@@ -34,6 +36,22 @@
     </nav>
 
     <header>
+
+      <div class="container-secundario">
+        <div></div><h2>Selecciona tu ciudad</h2></div>
+        <div><select name="select">
+          <option value="value0" selected></option>
+          <option value="value1">ciudad: "Tel Aviv", pais: "Israel"</option>
+          <option value="value2" >ciudad: "Buenos Aires", pais: "Argentina" </option>
+          <option value="value3">ciudad: "Bogotá", pais: "Colombia"</option>
+          <option value="value4">ciudad: "Lima", pais: "Peru"</option>
+          <option value="value3">ciudad: "Vigo", pais: "España"</option>
+        </select>
+        </div>        
+
+      </div>
+       
+
       <div class="container-relojes">
         <div class="card text-dark bg-light mb-3">
           <div class="card-header">Tel Aviv</div>
@@ -87,7 +105,7 @@
       
       <div class="container-secundario">
         <p>
-            <button type="button" id="btnUpdate" class="boton">Actualizar Relojes</button>;
+            <button type="button" id="btnUpdate" class="boton">Actualizar Relojes</button>
         </p>
       </div>
      
@@ -101,7 +119,7 @@
           <h1>Que es Reloj Mundial</h1>
           <p><h5>Reloj mundial es el simulador interactivo, elegido como proyecto de desarrollo javascript, para CoderHouse.</h5></p> 
           <p><h5> En mi trabajo me toca reunirme con personas de diferentes ubicaciones y siempre pierdo tiempo calculando las diferencias horarias. Espero que este simulador ayude a reducir esos tiempos.</h5> </p>
-          <P>Version 2.1.0</P>
+          <P>Version 3.0.0</P>
         </div>
        
         <div class="ancla">

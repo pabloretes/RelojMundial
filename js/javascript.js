@@ -16,7 +16,6 @@ const miArrayCiudades = [
 const jsonCiudades = JSON.stringify(miArrayCiudades);
 sessionStorage.setItem("Ciudades", jsonCiudades);
 
-
 let date = new Date();
 
 // Tuve que poner este objeto para poder formatear la fecha
@@ -32,11 +31,21 @@ function fn_cuentaRelojes() {
   return lasCiudades.length;
 }
 
+function reseteaColores() {
+  document.getElementById("id_hora1").style.color = "black";
+  document.getElementById("id_hora2").style.color = "black";
+  document.getElementById("id_hora3").style.color = "black";
+  document.getElementById("id_hora4").style.color = "black";
+  document.getElementById("id_hora5").style.color = "black";
+}
+
 function fn_actualizarHora(ciudadSeleccion) {
+  reseteaColores();
   // Cantidad de relojes
   let cantidadRelojes = document.getElementById("id_textoCantidadRelojes");
-  cantidadRelojes.innerText = "Reloj Mundial posee " + fn_cuentaRelojes() + " Relojes";
-  
+  cantidadRelojes.innerText =
+    "Reloj Mundial posee " + fn_cuentaRelojes() + " Relojes";
+
   /* Tel Aviv 6 horas de diferencia    */
   date = new Date();
   date.setHours(date.getHours() + difTel);
@@ -87,19 +96,48 @@ function fn_actualizarHora(ciudadSeleccion) {
 }
 
 // Evento click <Actualizar Relojes>
-document.getElementById("btnUpdate").addEventListener("click", fn_clickActualizar);
+document
+  .getElementById("btnUpdate")
+  .addEventListener("click", fn_clickActualizar);
 
 function fn_clickActualizar() {
-    document.getElementById("btnUpdate").innerHTML = "Todo Actualizado";
-    fn_actualizarHora();
+  document.getElementById("btnUpdate").innerHTML = "Todo Actualizado";
+  fn_actualizarHora();
 }
 
 // Evento click <Seleccionar>
-document.getElementById("btnSelect").addEventListener("click", fn_clickSeleccionar);
+document
+  .getElementById("btnSelect")
+  .addEventListener("click", fn_clickSeleccionar);
 
 function fn_clickSeleccionar() {
   let seleccion = document.getElementById("selectCiudades");
   let tuCiudad = document.getElementById("id_tuCiudad");
-  tuCiudad.innerText =  "Tu ciudad es " + seleccion.options[seleccion.selectedIndex].text;
-  fn_actualizarHora(seleccion.options[seleccion.selectedIndex].text);
+  let textoCiudad = seleccion.options[seleccion.selectedIndex].text;
+  tuCiudad.innerText = "Tu ciudad es " + textoCiudad;
+  fn_actualizarHora();
+  fn_pintaCiudad(textoCiudad);
+}
+
+function fn_pintaCiudad(textoCiudad) {
+  console.log(textoCiudad);
+  if (textoCiudad == "Tel Aviv") {
+    document.getElementById("id_hora1").style.color = "fuchsia";
+  } else {
+    if (textoCiudad == "Buenos Aires") {
+      document.getElementById("id_hora2").style.color = "fuchsia";
+    } else {
+      if (textoCiudad == "Bogotá") {
+        document.getElementById("id_hora3").style.color = "fuchsia";
+      } else {
+        if (textoCiudad == "Lima") {
+          document.getElementById("id_hora4").style.color = "fuchsia";
+        }  else {
+          if (textoCiudad == "Vigo") {
+            document.getElementById("id_hora5").style.color = "fuchsia";
+          }
+        }
+      }
+    }
+  }
 }

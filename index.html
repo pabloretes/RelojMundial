@@ -11,11 +11,12 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" href="img/reloj-icono.png" />
   </head>
   <body>
-
+    <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <span class="navbar-brand mb-0">Reloj Mundial</span>
@@ -34,86 +35,57 @@
         </div>
       </div>
     </nav>
-
-    <header>
-
-      <div class="container-secundario">
-        <span><h2>Selecciona tu ciudad</h2></span>
-        
-        <div class="selectValor"><select id="selectCiudades" name="select">
-          <option value="value0" selected></option>
-          <option value="value1">Tel Aviv</option>
-          <option value="value2" >Buenos Aires</option>
-          <option value="value3">Bogotá</option>
-          <option value="value4">Lima</option>
-          <option value="value5">Vigo</option>
-        </select>
-      
-          <button type="button" id="btnSelect" class="boton__select">Seleccionar</button>
-     
-      </div>     
-        
-         
-        
-
-      </div>
-       
-
       <div class="container-relojes">
-        <div class="card text-dark bg-light mb-3">
-          <div class="card-header">Tel Aviv</div>
-          <div class="card-body">
-            <h2 class="card-title" id="id_hora1">00:00:00</h2>
-            <p id="id_fecha1"></p>
+        <div class="container-reloj" id="container1" onclick="fn_clickSeleccionar('#ciudad1')">
+          <div><span id="ciudad1" class="ciudad" ></span></div>
+          <div class="reloj"><span id="tiempo1">00 : 00 : 00</span></div>
+        </div>
+
+        <div class="container-reloj" id="container2" onclick="fn_clickSeleccionar('#ciudad2')">
+          <div><span id="ciudad2" class="ciudad" ></span></div>
+          <div class="reloj">
+            <span id="tiempo2">00 : 00 : 00</span>
           </div>
         </div>
 
-        <div class="card text-dark bg-light mb-3">
-          <div class="card-header">Buenos Aires</div>
-          <div class="card-body">
-            <h2 class="card-title" id="id_hora2">00:00:00</h2>
-            <p id="id_fecha2"></p>
-          </div>
-        </div>
-
-        <div class="card text-dark bg-light mb-3">
-          <div class="card-header">Bogotá</div>
-          <div class="card-body">
-            <h2 class="card-title" id="id_hora3">00:00:00</h2>
-            <p id="id_fecha3"></p>
-          </div>
-        </div>
-
-        <div class="card text-dark bg-light mb-3">
-          <div class="card-header">Lima</div>
-          <div class="card-body">
-            <h2 class="card-title" id="id_hora4">00:00:00</h2>
-            <p id="id_fecha4"></p>
-          </div>
-        </div>
-     
-
-      
-        <div class="card text-dark bg-light mb-3">
-          <div class="card-header">Vigo</div>
-          <div class="card-body">
-            <h2 class="card-title" id="id_hora5">00:00:00</h2>
-            <p id="id_fecha5"></p>
+        <div class="container-reloj" id="container3" onclick="fn_clickSeleccionar('#ciudad3')">
+          <div><span id="ciudad3" class="ciudad" ></span></div>
+          <div class="reloj">
+            <span id="tiempo3">00 : 00 : 00</span>
           </div>
         </div>
       </div>
+      <div class="container-relojes">
+      <div class="container-reloj" id="container4" onclick="fn_clickSeleccionar('#ciudad4')">
+        <div><span id="ciudad4" class="ciudad" ></span></div>
+        <div class="reloj">
+          <span id="tiempo4">00 : 00 : 00</span>
+        </div>
+      </div>
+
+      <div class="container-reloj" id="container5" onclick="fn_clickSeleccionar('#ciudad5')">
+        <div><span id="ciudad5" class="ciudad"></span></div>
+        <div class="reloj">
+          <span id="tiempo5">00 : 00 : 00</span>
+      </div>
+      </div>
+
+      <div class="container-reloj" id="container6" onclick="fn_clickSeleccionar('#ciudad6')">
+        <div><span id="ciudad6" class="ciudad"></span></div>
+        <div class="reloj">
+          <span id="tiempo6">00 : 00 : 00</span>
+      </div>
+      </div>        
+
+    </div>
+      </div>
+
+         
 
       <div class="container-secundario">
         <h1><p id="id_tuCiudad"></p></h1>
         <h4><p id="id_textoCantidadRelojes"></p></h4>
       </div>
-      
-      <div class="container-secundario">
-        <p>
-            <button type="button" id="btnUpdate" class="boton">Actualizar Relojes</button>
-        </p>
-      </div>
-     
 
     </header>
 
@@ -124,7 +96,7 @@
           <h1>Que es Reloj Mundial</h1>
           <p><h5>Reloj mundial es el simulador interactivo, elegido como proyecto de desarrollo javascript, para CoderHouse.</h5></p> 
           <p><h5> En mi trabajo me toca reunirme con personas de diferentes ubicaciones y siempre pierdo tiempo calculando las diferencias horarias. Espero que este simulador ayude a reducir esos tiempos.</h5> </p>
-          <P>Version 3.0.0</P>
+          <P>Version 3.9.0</P>
         </div>
        
         <div class="ancla">
@@ -132,13 +104,13 @@
           <h1>Autor</h1>
           <div>
             <p><h5>Pablo Retes</h5> </p>
-            <P>Abril 2022</P>
+            <P>Mayo 2022</P>
           </div>
         </div>
       
       </div>
     </body>
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/javascript.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

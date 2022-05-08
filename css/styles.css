@@ -7,14 +7,14 @@
 }
 
 header {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
+  padding-top: 7rem;
+  padding-bottom: 1rem;
   text-align: center;
   color: #fff;
   background-image: url("../img/rm-header-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 110vh;
+  height: 115vh;
 }
 
 h3 {
@@ -38,13 +38,12 @@ h3 {
     flex-direction: row;
     padding: 0px;
     justify-content: center;
-    margin: 30px auto;
+    margin: 0 auto;
 
 }
 
 .reloj {
 	display:inline-block;
-	color:white;
 	padding:30px 20px;
 	font-weight:normal;
 	font-size:35px;
@@ -54,6 +53,14 @@ h3 {
 				10px 10px 10px rgba(0,0,0,0.1),
 				inset -8px -8px 15px rgba(255,255,255,0.5),
 				inset 10px 10px 10px rgba(0,0,0,0.1);
+}
+
+.fechaReloj {
+  font-size: 15px;
+}
+
+.nombreCiudad {
+  font-size: 1.5em;
 }
 
 #grilla {
@@ -107,32 +114,6 @@ h3 {
   padding: 0 0 5% 0;
 }
 
-.boton {
-    padding: 15px 30px;
-    font-weight: 600;
-    font-size: 20px;
-    color: #ffffff;
-    background-color: black;
-    border-radius: 6px;
-    border: 2px solid fuchsia;
-  
-}
-
-.selectValor {
-  font-weight: 600;
-  font-size: 30px;
-}
-
-.boton__select {
-  padding: 15px 30px;
-  font-weight: 600;
-  font-size: 20px;
-  color: #ffffff;
-  background-color: black;
-  border-radius: 6px;
-  border: 2px solid orange;
-  margin: 20px 0 0 0;
-}
 
 .fixed-top {
   position: absolute !important;

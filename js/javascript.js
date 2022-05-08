@@ -1,3 +1,13 @@
+let date = new Date();
+
+// Tuve que poner este objeto para poder formatear la fecha
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
 //Fetch para penultima entrega // Pinta relojes
 const contRelojes = 0;
 
@@ -14,8 +24,9 @@ function fn_modificarDOM(){
       let idContainer = `container${ciudad.idCiudad}`;
       let idTiempo = `tiempo${ciudad.idCiudad}`;
       grilla.innerHTML += `<div id=${idContainer} class="container-reloj" onclick="fn_clickSeleccionar('#ciudad${ciudad.idCiudad}')">
-      <div><span id="ciudad${ciudad.idCiudad}" >${ciudad.ciudad}</span></div>
-      <div class="reloj"><span id="${idTiempo}">${ciudad.horaLocal}</span></div></div>`;
+      <div><span id="ciudad${ciudad.idCiudad}" class="nombreCiudad" >${ciudad.ciudad}</span></div>
+      <div class="reloj"><span id="${idTiempo}">${ciudad.horaLocal}</span>
+      <p id="idFecha${ciudad.idCiudad}" class="fechaReloj" ></p></div></div>`;
     });
   });
 }
@@ -36,7 +47,9 @@ function fn_iniciarRelojes(){
 function fn_iniciarRelojLocal(ciudad) {
     let idTiempo = `tiempo${ciudad.idCiudad}`;
     let horaLocal = document.getElementById(idTiempo);
-    
+    let idFecha = `idFecha${ciudad.idCiudad}`;
+    let fechaLocal = document.getElementById(idFecha);
+
   setInterval(function () {
     let date = new Date();
     date.setHours(date.getHours() + ciudad.difHoraria);
@@ -51,6 +64,7 @@ function fn_iniciarRelojLocal(ciudad) {
     if (segundos < 10) segundos = "0" + segundos;
 
     horaLocal.innerText = horas + ":" + minutos + ":" + segundos;
+    fechaLocal.innerText = date.toLocaleDateString("es-AR", options);
     
   }, 1000);
 }
@@ -89,29 +103,9 @@ function fn_clickSeleccionar(id_ciudad) {
   }).showToast();
 }
 
-
-
-
-
-
-
-
-let date = new Date();
-
-// Tuve que poner este objeto para poder formatear la fecha
-const options = {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-};
-
-
-
-
-
 // USO OPERADOR TERNARIO, entrega del 28/04
 function fn_pintaCiudad(textoCiudad) {
+  console.log(textoCiudad);
   textoCiudad == "Tel Aviv"
     ? (document.getElementById("tiempo1").style.color = "fuchsia")
     : (document.getElementById("tiempo1").style.color = "white");
@@ -134,23 +128,8 @@ function fn_pintaCiudad(textoCiudad) {
 
 
 
-// const container2 = document.querySelector("#container2");
-// container2.onmouseover = logMouseOver;
-// container2.onmouseout = logMouseOut;
 
-// const container3 = document.querySelector("#container3");
-// container3.onmouseover = logMouseOver;
-// container3.onmouseout = logMouseOut;
 
-// const container4 = document.querySelector("#container4");
-// container4.onmouseover = logMouseOver;
-// container4.onmouseout = logMouseOut;
 
-// const container5 = document.querySelector("#container5");
-// container5.onmouseover = logMouseOver;
-// container5.onmouseout = logMouseOut;
 
-// const container6 = document.querySelector("#container6");
-// container6.onmouseover = logMouseOver;
-// container6.onmouseout = logMouseOut;
 

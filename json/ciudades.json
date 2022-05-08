@@ -1,0 +1,8 @@
+[
+{ "idCiudad": 1, "ciudad": "Tel Aviv", "pais": "Israel", "difHoraria": 6, "horaLocal": "00:00:00"},
+{ "idCiudad": 2, "ciudad": "Buenos Aires", "pais": "Argentina", "difHoraria": 0, "horaLocal": "00:00:00"},
+{ "idCiudad": 3, "ciudad": "Bogotá", "pais": "Colombia", "difHoraria": -2, "horaLocal": "00:00:00"},
+{ "idCiudad": 4, "ciudad": "Lima", "pais": "Peru", "difHoraria": -2, "horaLocal": "00:00:00"},
+{ "idCiudad": 5, "ciudad": "Vigo", "pais": "España", "difHoraria": 5, "horaLocal": "00:00:00"},
+{ "idCiudad": 6, "ciudad": "Santiago", "pais": "Chile", "difHoraria": -1, "horaLocal": "00:00:00" }
+]

@@ -39,11 +39,12 @@ h3 {
     padding: 0px;
     justify-content: center;
     margin: 30px auto;
+
 }
 
 .reloj {
 	display:inline-block;
-	color:#71767f;
+	color:white;
 	padding:30px 20px;
 	font-weight:normal;
 	font-size:35px;
@@ -55,7 +56,11 @@ h3 {
 				inset 10px 10px 10px rgba(0,0,0,0.1);
 }
 
-
+#grilla {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
 
 .container-secundario {
   display: flex;
@@ -77,6 +82,8 @@ h3 {
   width: 300px; 
   margin: 5px;
   cursor: default;
+  padding: 20px 0;
+
 }
 
 .ciudad {

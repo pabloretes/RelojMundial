@@ -16,7 +16,7 @@ fn_iniciarRelojes();
 fn_pintaCantidad();
 
 function fn_modificarDOM(){
-  const resp = fetch("./json/ciudades.json")
+  fetch("./json/ciudades.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((ciudad) => {
@@ -32,7 +32,7 @@ function fn_modificarDOM(){
 }
 
 function fn_iniciarRelojes(){
-  const resp = fetch("./json/ciudades.json")
+  fetch("./json/ciudades.json")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((ciudad) => {
@@ -71,7 +71,7 @@ function fn_iniciarRelojLocal(ciudad) {
 
 function fn_pintaCantidad() {
   const contRelojes = 0;
-  const resp = fetch("./json/ciudades.json")
+  fetch("./json/ciudades.json")
   .then((res) => res.json())
   .then((data) => {
     let cantidadRelojes = document.getElementById("id_textoCantidadRelojes");
@@ -94,7 +94,7 @@ function fn_clickSeleccionar(id_ciudad) {
 
   let tuCiudad = document.getElementById("id_tuCiudad");
   tuCiudad.innerText = "Tu ciudad es " + textoCiudad.innerText;
-
+  
   fn_pintaCiudad(textoCiudad.innerText);
   Toastify({
     text: "Tu ciudad es " + textoCiudad.innerText + " :)",
@@ -103,29 +103,24 @@ function fn_clickSeleccionar(id_ciudad) {
   }).showToast();
 }
 
-// USO OPERADOR TERNARIO, entrega del 28/04
 function fn_pintaCiudad(textoCiudad) {
-  console.log(textoCiudad);
-  textoCiudad == "Tel Aviv"
-    ? (document.getElementById("tiempo1").style.color = "fuchsia")
-    : (document.getElementById("tiempo1").style.color = "white");
-  textoCiudad == "Buenos Aires"
-    ? (document.getElementById("tiempo2").style.color = "fuchsia")
-    : (document.getElementById("tiempo2").style.color = "white");
-  textoCiudad == "Bogotá"
-    ? (document.getElementById("tiempo3").style.color = "fuchsia")
-    : (document.getElementById("tiempo3").style.color = "white");
-  textoCiudad == "Lima"
-    ? (document.getElementById("tiempo4").style.color = "fuchsia")
-    : (document.getElementById("tiempo4").style.color = "white");
-  textoCiudad == "Vigo"
-    ? (document.getElementById("tiempo5").style.color = "fuchsia")
-    : (document.getElementById("tiempo5").style.color = "white");
-  textoCiudad == "Santiago"
-    ? (document.getElementById("tiempo6").style.color = "fuchsia")
-    : (document.getElementById("tiempo6").style.color = "white");
-}
+  fetch("./json/ciudades.json")
+  .then((res) => res.json())
+  .then((data) => {
+    data.forEach((ciudad) => {
+      let elHeader = document.getElementById("elHeader");
 
+      if (textoCiudad == ciudad.ciudad) {
+        document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "fuchsia";
+        elHeader.style.background = `url("../img/ciudad${ciudad.idCiudad}.jpg")`;
+      } else {
+        document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "white";
+
+      }
+    });
+  });
+  
+}
 
 
 

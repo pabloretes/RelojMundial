@@ -111,6 +111,7 @@ function fn_pintaCiudad(textoCiudad) {
         let elHeader = document.getElementById("elHeader");
 
         if (textoCiudad == ciudad.ciudad) {
+          console.log(textoCiudad + ciudad.ciudad);
           document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "fuchsia";
           elHeader.style.background = `url("../img/ciudad${ciudad.idCiudad}.jpg")`;
         } else {

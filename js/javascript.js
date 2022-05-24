@@ -107,20 +107,20 @@ function fn_pintaCiudad(textoCiudad) {
   fetch("./json/ciudades.json")
   .then((res) => res.json())
   .then((data) => {
-    data.forEach((ciudad) => {
-      let elHeader = document.getElementById("elHeader");
+      data.forEach((ciudad) => {
+        let elHeader = document.getElementById("elHeader");
 
-      if (textoCiudad == ciudad.ciudad) {
-        document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "fuchsia";
-        elHeader.style.background = `url("../img/ciudad${ciudad.idCiudad}.jpg")`;
-      } else {
-        document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "white";
-
-      }
+        if (textoCiudad == ciudad.ciudad) {
+          document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "fuchsia";
+          elHeader.style.background = `url("../img/ciudad${ciudad.idCiudad}.jpg")`;
+        } else {
+          document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "white";
+        }
+      });
     });
-  });
-  
-}
+  }
+
+
 
 
 

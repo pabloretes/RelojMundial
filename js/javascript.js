@@ -113,9 +113,7 @@ function fn_pintaCiudad(textoCiudad) {
         if (textoCiudad == ciudad.ciudad) {
 
           document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "fuchsia";
-          let laUrl =  "../imagenes/ciudad" + ciudad.idCiudad;
-          elHeader.style.backgroundImage = `url(${laUrl})`; 
-          console.log(laUrl);
+          
         } else {
           document.getElementById(`tiempo${ciudad.idCiudad}`).style.color = "white";
         }
